@@ -1,24 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes, Link, Outlet } from 'react-router-dom';
+import { AppProvider } from './context';
+import Users from './pages/Users';
+import Products from './pages/Products';
+import Breadcrumb from "./components/Breadcrumb";
 
 function App() {
+
+    const breadcrumbPaths = [
+        { label: 'Home', url: '/' }
+    ];
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+      <AppProvider>
+          <Router>
+              <nav>
+                  <Link to="/users">Users</Link>
+                  <Link to="/products">Products</Link>
+              </nav>
+              <Outlet/>
+              <Routes>
+                  <Route exact path="/users" element={<Users/>}/>
+                  <Route exact path="/products" element={<Products/>}/>
+              </Routes>
+
+          </Router>
+      </AppProvider>
   );
 }
 

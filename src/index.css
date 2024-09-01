@@ -1,13 +1,65 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Neutra Text', Arial, sans-serif; /* Assuming 'Neutra Text' is available */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: 'Neutra Text', monospace;
+}
+
+/* General font color */
+body {
+  color: #322625;
+  font-family: 'Neutra Text', Arial, sans-serif; /* Assuming 'Neutra Text' is available */
+}
+
+/* Table styles */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid black;
+}
+
+.table th {
+  background-color: #c0e3e5;
+  padding: 10px;
+  border: 1px solid #322625;
+}
+
+.table td {
+  padding: 10px;
+  border: 1px solid #322625;
+}
+
+.table tr.selected {
+  background-color: #ebebeb;
+}
+
+.table tr:hover {
+  background-color: #f2f2f2; /* Slightly lighter gray for hover */
+}
+
+
+.breadcrumb {
+  padding: 8px 15px;
+  background-color: #fff;
+  border-radius: 5px;
+  list-style: none;
+}
+
+.breadcrumb .breadcrumb-item + .breadcrumb-item::before {
+  content: ">";
+  padding: 0 5px;
+  color: #322625;
+}
+
+.breadcrumb-item a {
+  color: #322625;
+  text-decoration: none;
+}
+
+.breadcrumb-item.active {
+  color: #6c757d; /* Active item color */
 }
