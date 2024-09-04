@@ -19,7 +19,6 @@ const Products = () => {
         { Header: "Brand", accessor: "brand" },
         { Header: "Price", accessor: "price" },
         { Header: "Rating", accessor: "rating" }
-
     ];
 
     //console.log(Products);
